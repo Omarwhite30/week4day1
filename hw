@@ -1,0 +1,71 @@
+-- This will find all the actors named Wahlberg.
+
+SELECT *
+FROM actor
+WHERE last_name LIKE 'Wahlberg'
+
+-- This will find the amount of payments between $3.99 and $5.99.
+SELECT *
+FROM payment
+WHERE amount BETWEEN 3.99 AND 5.99; 
+
+
+-- This will find out what what store has the most of what film
+
+SELECT film_id, COUNT(film_id)
+FROM inventory 
+GROUP BY film_id 
+ORDER BY COUNT(film_id) DESC;
+
+
+-- This will show the actors with the last name William
+SELECT *
+FROM customer
+WHERE last_name LIKE 'William';
+
+
+-- This will see which store employee sold the most rentals
+SELECT rental  
+FROM staff_id
+WHERE staff_id like rental_id
+
+-- This will show how many districts are there.
+select count(distinct district)
+from address;
+
+-- This will show what films has the most actors 
+
+select film_id, count(film_id)
+from film_actor
+group by film_id
+order by count(film_id) desc;
+
+
+-- This will show how many customers have the last name ending in 'es'
+
+select count(last_name)
+from customer
+where last_name like '%es'
+and store_id = 1;
+
+
+
+
+
+--This will show the payment amounts that had a number of rentals above 250 for customers with is between 380-430
+
+select count(last_name)
+from customer
+where last_name like '%es'
+and store_id = 1;
+
+
+-- This will show the rating categories
+
+select distinct rating, count(rating)
+from film
+group by rating
+order by count(rating) desc;
+
+
+

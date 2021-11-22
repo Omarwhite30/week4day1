@@ -1,0 +1,76 @@
+-- Hello world SQL query, SELECT all record from actor table
+SELECT *
+FROM actor;
+
+-- query for First_name and last_name in the avtor table
+SELECT first_name, last_name
+FROM actor;
+
+
+-- query for a frist_name that equals NICK using the WHERE clause
+SELECT last_name, first_name 
+FROM actor
+WHERE first_name = 'Nick';
+
+-- Query for first_name that is LIKE Nick using LIKE and WHERE
+SELECT last_name, first_name
+FROM actor
+WHERE first_name LIKE 'Nick';
+
+-- Query for all first_names that start with J using LIKE, WHERE and wildcard
+SELECT last_name, first_name
+FROM actor
+WHERE first_name LIKE 'J%';
+
+-- Query for all first_name data that starts with K and has 2 letters after the k. -- LIKE, WHERE 
+SELECT first_name, actor_id
+FROM actor
+WHERE first_name LIKE 'K__'
+
+-- Query for first_name data that starts with K/ and ends with th
+-- Using LIKE, WHERE, WILDCARD, and UNDERSCORE
+SELECT *
+FROM actor
+WHERE first_name LIKE 'K__%th';
+
+--Comparing operators are 
+-- Greater than(>) -- Less than (<)
+-- Greater or equal(>=) less or equal(<=)
+-- Not equal(<>)
+
+-- Explore Data with SELCT* Query (Do this when you change to a new table)
+SELECT *
+FROM payment;
+
+-- Query for data that shows customer who paid 
+-- an amount greater than $2
+SELECT customer_id, amount
+FROM payment
+WHERE amount > 2.00;
+
+-- This will find all the actors named Wahlberg.
+
+SELECT *
+FROM actor
+WHERE last_name LIKE 'Wahlberg'
+
+-- This will find the amount of payments between $3.99 and $5.99.
+SELECT *
+FROM payment
+WHERE amount BETWEEN 3.99 AND 5.99; 
+
+-- This will find out what what store has the most of what film
+
+SELECT film_id, COUNT(film_id)
+FROM inventory 
+GROUP BY film_id 
+ORDER BY COUNT(film_id) DESC;
+
+-- This will show the actors with the last name William
+SELECT *
+FROM customer
+WHERE last_name LIKE 'William';
+
+
+
+
